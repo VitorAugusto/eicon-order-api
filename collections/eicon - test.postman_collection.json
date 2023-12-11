@@ -1,0 +1,108 @@
+{
+	"info": {
+		"_postman_id": "1dd3a80b-78f4-4596-ae0a-0862d4a9bd56",
+		"name": "eicon - test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30058458"
+	},
+	"item": [
+		{
+			"name": "Salvar Pedidos JSON",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"numeroControle\": \"300\",\n        \"dataCadastro\": \"2023-12-25\",\n        \"nome\": \"Macbook pro 2022\",\n        \"valor\": 9,\n        \"codigoCliente\": 8\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/v1/pedido/"
+			},
+			"response": []
+		},
+		{
+			"name": "Salvar Pedidos XML",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n<root>\n    <pedido>\n        <numeroControle>111</numeroControle>\n        <dataCadastro>2023-12-12</dataCadastro>\n        <nome>Geladeira</nome>\n        <valor>1000</valor>\n        <codigoCliente>1</codigoCliente>\n    </pedido>\n    <pedido>\n        <numeroControle>222</numeroControle>\n        <dataCadastro>2023-12-12</dataCadastro>\n        <nome>Iphone 15</nome>\n        <valor>5000</valor>\n        <quantidade>1000</quantidade>\n        <codigoCliente>8</codigoCliente>\n    </pedido>\n    <pedido>\n        <numeroControle>333</numeroControle>\n        <dataCadastro>2023-12-12</dataCadastro>\n        <nome>Macbook</nome>\n        <valor>16550</valor>\n        <codigoCliente>7</codigoCliente>\n    </pedido>\n    <pedido>\n        <numeroControle>444</numeroControle>\n        <dataCadastro>2023-12-12</dataCadastro>\n        <nome>Teclado</nome>\n        <valor>250</valor>\n        <quantidade>25</quantidade>\n        <codigoCliente>4</codigoCliente>\n    </pedido>\n    <pedido>\n        <numeroControle>555</numeroControle>\n        <dataCadastro>2023-12-12</dataCadastro>\n        <nome>Mouse</nome>\n        <valor>150</valor>\n        <quantidade>25</quantidade>\n        <codigoCliente>10</codigoCliente>\n    </pedido>\n</root>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "localhost:8080/v1/pedido/"
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Pedidos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/v1/pedido/find"
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Pedidos Parâmetros",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/v1/pedido/find?nome=Macbook&data=2023-12-12",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"pedido",
+						"find"
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "Macbook"
+						},
+						{
+							"key": "data",
+							"value": "2023-12-12"
+						},
+						{
+							"key": "quantidade",
+							"value": "1000",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Pedidos Pelo Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8090/v1/pedidos/consulta/71990"
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Pedidos por cliente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/v1/pedido/find/cliente/8"
+			},
+			"response": []
+		}
+	]
+}

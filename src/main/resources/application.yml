@@ -1,0 +1,20 @@
+server:
+  port: 8080
+spring:
+  mvc:
+    format:
+      date-time: iso
+  datasource:
+    url: jdbc:mysql://localhost:3306/order_api
+    username: root
+    password: root
+  jpa:
+    hibernate.ddl-auto: none
+    generate-ddl: true
+    show-sql: true
+
+springdoc:
+  api-docs:
+    path: /docs
+  swagger-ui:
+    path: /docs.html
